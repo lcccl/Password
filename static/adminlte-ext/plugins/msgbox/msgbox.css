@@ -1,0 +1,43 @@
+.modal-msgbox {
+	border-radius: 6px;    
+}
+.modal-msgbox .modal-header {
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	height: 50px;
+}
+.modal-msgbox .modal-body {
+	min-height: 80px;
+}
+.modal-msgbox .modal-footer {
+	background-color: #f9f9f9;
+	height: 55px;
+    padding: 10px;	
+    border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+.modal-theme-info .modal-header {
+	background-color: #d9e7f2;
+}
+
+.modal-theme-warn .modal-header {
+	background-color: #FFEDE1;
+}
+
+.modal-theme-error .modal-header {
+	background-color: rgba(247, 149, 149, 0.65);
+}
+
+.modal-theme-confirm .modal-header {	
+}
+
+.modal-msgbox .modal-msgbox-iframe {
+	width: 100%;
+    border: none;
+    overflow: auto;
+}
+
+.modal-msgbox .modal-body p {
+	word-break: break-word;
+}

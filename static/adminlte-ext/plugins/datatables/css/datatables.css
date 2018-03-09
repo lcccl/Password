@@ -1,0 +1,67 @@
+/* 每页显示记录数、统计信息、分页栏样式 */
+div.dataTables_wrapper div.dataTables_length {
+    width: 130px;
+    float: left;
+    padding-top: 8px;
+}
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 10px;
+    white-space: nowrap;
+    float: left;
+}
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+    float: left;
+    right: 10px;
+    position: absolute;
+}
+div.dataTables_wrapper div.dataTables_length select {
+    width: 50px;
+    height: 26px;
+    display: inline-block;
+    padding: 5px;
+}
+div.dataTables_wrapper tr.selected {
+    background-color: #eeeef3;
+}
+div.dataTables_wrapper tr span.action a {
+    margin-right: 5px;
+}
+
+/* 首列选择框、序号样式 */
+div.dataTables_wrapper td label.checkbox, div.dataTables_wrapper label.radio {
+    min-height: 20px;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 20px;
+}
+div.dataTables_wrapper td label.checkbox input[type=checkbox], 
+div.dataTables_wrapper td label.radio input[type=radio] {
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 4px;
+}
+div.dataTables_wrapper td label {
+    font-weight: 400;
+}
+
+div.dataTables_wrapper th label.selectAll {    
+    min-height: 20px;
+    cursor: pointer;
+    display: table-cell;
+    padding-left: 20px;
+}
+div.dataTables_wrapper th label.selectAll input[type=checkbox] {
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 4px;
+}
+
+/* 数据加载中样式 */
+.dt-processing {
+    background: url(../img/loading_16.gif) no-repeat scroll 10px 2px transparent;
+    text-align: center;
+    margin-left: 20px;
+}

@@ -1,0 +1,70 @@
+<div class="box box-info" style="border-top: none;">
+    <form class="form-horizontal">
+        <div class="box-body">
+            <div class="form-group">
+                <label for="old-key" class="col-sm-2 control-label">旧密钥</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control required" id="old-key" name="key" placeholder="请输入旧密钥" error-placement="top" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="new-key" class="col-sm-2 control-label">新密钥</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control required" id="new-key" name="newKey" placeholder="请输入新密钥" error-placement="top"
+                    />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="new-key-confirm" class="col-sm-2 control-label">新密钥确认</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control required" id="new-key-confirm" name="newKeyConfirm" placeholder="请再次输入新密钥" error-placement="top"
+                    />
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="box-footer" style="border-top: none;">
+        <button class="btn btn-info pull-right" id="submitBtn">提交</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var box = MsgBox.getCurrentBox(),
+            ctx = box.box,
+            form = $("form", ctx);
+
+        // 表单验证初始化
+        form.defaultValidate({});
+
+        // 提交
+        $("#submitBtn", ctx).on("click", function () {
+            if (form.valid()) {
+                if ($("[name='newKey']", form).val() != $("[name='newKeyConfirm']", form).val()) {
+                    MsgBox.error("两次输入的新密钥不一致");
+                    return;
+                }
+
+                $.ajax({
+                    url: baseUrl + "/passoword/updateKey",
+                    data: {
+                        key: $("[name='key']", form).val(),
+                        newKey: $("[name='newKey']", form).val()
+                    },
+                    showLoading: true,
+                    success: function (resp) {
+                        if (resp.code == 0) {
+                            MsgBox.closeCurrentBox();
+                            MsgBox.info("修改成功");
+                        } else {
+                            MsgBox.error(resp.message);
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>

@@ -1,0 +1,31 @@
+.ui-context-menu {
+	position: absolute;    
+    z-index: 19999;
+    display: none;
+}
+
+.ui-context-menu ul {
+	list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px #e4e2e2;
+}
+
+.ui-context-menu ul li {
+	display: list-item;
+	padding: 3px 20px;
+	clear: both;
+    text-align: -webkit-match-parent;
+   	font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.ui-context-menu ul li:hover {
+	background-color: #e1e3e9;
+}
