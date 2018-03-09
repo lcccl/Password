@@ -5,18 +5,40 @@ var baseUrl = "";
 /* 数据字典 */
 var staticData = {
 	/* 分类 */
-	pwdTypes: {
-		"": "请选择",
-		"01": "生活",
-		"02": "社交",
-		"03": "购物",
-		"04": "娱乐",
-		"05": "游戏",
-		"06": "交通",
-		"07": "财务",
-		"08": "邮箱",
-		"09": "开发"
-	}
+	pwdTypes: [{
+		code: "",
+		text: "请选择"
+	}, {
+		code: "01",
+		text: "生活"
+	}, {
+		code: "02",
+		text: "社交"
+	}, {
+		code: "03",
+		text: "购物"
+	}, {
+		code: "04",
+		text: "娱乐"
+	}, {
+		code: "05",
+		text: "游戏"
+	}, {
+		code: "06",
+		text: "交通"
+	}, {
+		code: "07",
+		text: "财务"
+	}, {
+		code: "08",
+		text: "邮箱"
+	}, {
+		code: "09",
+		text: "开发"
+	}, {
+		code: "10",
+		text: "支付"
+	}]
 };
 
 
@@ -67,8 +89,9 @@ var staticData = {
 		setSelectData: function (data, selectedValue) {
 			var el = $(this),
 				html = "";
-			for (var code in data) {
-				html += "<option value='" + code + "' " + (code == selectedValue ? "selected" : "") + ">" + data[code] + "</option>";
+			for (var i = 0; i < data.length; i++) {
+				var it = data[i];
+				html += "<option value='" + it.code + "' " + (it.code == selectedValue ? "selected" : "") + ">" + it.text + "</option>";
 			}
 			el.html(html);
 		}

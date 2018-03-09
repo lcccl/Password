@@ -50,7 +50,11 @@ module.exports = {
 			if (type && type != it.type) {
 				return false;
 			}
-			if (content && it.title.indexOf(content) == -1) {
+			if (content &&
+				(it.title.indexOf(content) == -1 &&
+					(!it.description || it.description.indexOf(content) == -1)
+				)
+			) {
 				return false;
 			}
 			return true;
