@@ -6,7 +6,7 @@ module.exports = {
 	/**
 	 * 初始化密钥
 	 */
-	"/passoword/initKey": function (req, resp) {
+	"/key/init": function (req, resp) {
 		var key = this.getParameter("key");
 		try {
 			PasswordManager.initKey(key);
@@ -24,7 +24,7 @@ module.exports = {
 	/**
 	 * 修改密钥
 	 */
-	"/passoword/updateKey": function (req, resp) {
+	"/password/updateKey": function (req, resp) {
 		var key = this.getParameter("key"),
 			newKey = this.getParameter("newKey");
 

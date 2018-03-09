@@ -28,7 +28,7 @@
         $("#submitBtn", ctx).on("click", function () {
             if (form.valid()) {
                 $.ajax({
-                    url: baseUrl + "/passoword/initKey",
+                    url: baseUrl + "/key/init",
                     data: {
                         key: $("[name='key']", form).val()
                     },
