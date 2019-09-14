@@ -38,6 +38,14 @@ var staticData = {
 	}, {
 		code: "10",
 		text: "支付"
+	}],
+	/* 导出类型 */
+	exportType: [{
+		code: "JSON",
+		text: "JSON"
+	}, {
+		code: "MD",
+		text: "Markdown"
 	}]
 };
 

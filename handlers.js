@@ -134,5 +134,46 @@ module.exports = {
 		this.renderJson({
 			code: 0
 		});
+	},
+
+	/**
+	 * 导出
+	 */
+	"/password/export": function (req, resp) {
+		var type = this.getParameter("type"),
+			path = this.getParameter("path");
+
+		PasswordManager.export(type, path);
+		console.log("导出成功，类型：" + type + "，路径：" + path);
+
+		this.renderJson({
+			code: 0
+		});
+	},
+
+	/**
+	 * 导入
+	 */
+	"/password/import": function (req, resp) {
+		var type = this.getParameter("type"),
+			path = this.getParameter("path");
+
+		try {
+			PasswordManager.import(type, path);
+			PasswordManager.persist();
+			console.log("导入成功，类型：" + type + "，路径：" + path);
+
+			this.renderJson({
+				code: 0
+			});
+		} catch (e) {
+			console.log("errors: " + e);
+			var message = e && e.code == 500 ? "文件类型错误，请输入类型为" + e.type + "的文件" : e;
+
+			this.renderJson({
+				code: -1,
+				message: message
+			});
+		}
 	}
 };

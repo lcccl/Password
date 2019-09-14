@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,58 +31,67 @@
   <!-- AdminLTE扩展样式 -->
   <link rel="stylesheet" href="adminlte-ext/css/adminlte-ext.css">
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
-<!-- main container -->
-<div class="mainContainer">
-</div>
+  <!-- main container -->
+  <div class="mainContainer">
+  </div>
 
-<!-- REQUIRED JS SCRIPTS -->
+  <!-- REQUIRED JS SCRIPTS -->
 
-<!-- jQuery 3 -->
-<script src="bower_components/jquery/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="bower_components/fastclick/fastclick.js"></script>
-<!-- Slimscroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- DataTables -->
-<script src="bower_components/jquery-datatables/jquery.dataTables.js"></script>
-<script src="bower_components/bootstrap-datatables/js/dataTables.bootstrap.min.js"></script>
-<!-- jQuery Validation -->
-<script src="bower_components/jquery-validation/jquery.validate.min.js"></script>
-<script src="bower_components/jquery-validation/additional-methods.min.js"></script>
-<script src="js/messages_zh.js"></script>
-<!-- AdminLTE App -->
-<script src="bower_components/bootstrap-adminlte/js/adminlte.min.js"></script>
+  <!-- jQuery 3 -->
+  <script src="bower_components/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="bower_components/fastclick/fastclick.js"></script>
+  <!-- Slimscroll -->
+  <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <!-- DataTables -->
+  <script src="bower_components/jquery-datatables/jquery.dataTables.js"></script>
+  <script src="bower_components/bootstrap-datatables/js/dataTables.bootstrap.min.js"></script>
+  <!-- jQuery Validation -->
+  <script src="bower_components/jquery-validation/jquery.validate.min.js"></script>
+  <script src="bower_components/jquery-validation/additional-methods.min.js"></script>
+  <script src="js/messages_zh.js"></script>
+  <!-- AdminLTE App -->
+  <script src="bower_components/bootstrap-adminlte/js/adminlte.min.js"></script>
 
-<!-- AdminLTE扩展 -->
-<script src="adminlte-ext/js/adminlte-ext.js"></script>
-<!-- 消息框组件 -->
-<script src="adminlte-ext/plugins/msgbox/msgbox.js"></script>
-<!-- 弹出框菜单组件 -->
-<script src="adminlte-ext/plugins/menu/menu.js"></script>
-<!-- datatables组件扩展 -->
-<script src="adminlte-ext/plugins/datatables/datatables.js"></script>
+  <!-- AdminLTE扩展 -->
+  <script src="adminlte-ext/js/adminlte-ext.js"></script>
+  <!-- 消息框组件 -->
+  <script src="adminlte-ext/plugins/msgbox/msgbox.js"></script>
+  <!-- 弹出框菜单组件 -->
+  <script src="adminlte-ext/plugins/menu/menu.js"></script>
+  <!-- datatables组件扩展 -->
+  <script src="adminlte-ext/plugins/datatables/datatables.js"></script>
 
-<!-- 公共js -->
-<script src="js/common.js"></script>
+  <!-- 公共js -->
+  <script src="js/common.js"></script>
 
-<script type="text/javascript">
-$(function () {
-	 $(".mainContainer").ajaxUrl({
-		url: baseUrl + "/pages/passwordList.html",
-		error: function (data) {
-			MsgBox.open({
-				title: "加密密钥",
-				url: baseUrl + "pages/keyInit.html",
-				extData: {
-					code: data.code
-				}
-			});
-		}
-	});
-});
-</script>
+  <script type="text/javascript">
+    $(function () {
+      $(".mainContainer").ajaxUrl({
+        url: baseUrl + "/pages/passwordList.html",
+        error: function (data) {
+          MsgBox.open({
+            title: "加密密钥",
+            url: baseUrl + "pages/keyInit.html",
+            extData: {
+              code: data.code
+            }
+          });
+        }
+      });
+
+      // 屏蔽回车
+      $(document).on("keydown", function (e) {
+        if (e.keyCode == 13) {
+          return false;
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
